@@ -1,16 +1,33 @@
 {
-  "private": true,
-  "scripts": {
-    "dev": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "watch-poll": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --watch-poll --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+  "name": "OllieFordandCo/amaranth",
+  "description": "Laravel engine to power directory listing websites",
+  "keywords": ["directory", "laravel"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Ruben Madila",
+      "email": "ruben@ollieford.co.uk"
+    }
+  ],
+  "require": {
+    "php": ">=5.4.0",
+    "guzzlehttp/guzzle": "~5.0|~6.0",
+    "illuminate/contracts": "~5.0",
+    "illuminate/http": "~5.0",
+    "illuminate/support": "~5.0"
   },
-  "devDependencies": {
-    "axios": "^0.15.3",
-    "cross-env": "^3.2.3",
-    "jquery": "^3.1.1",
-    "lodash": "^4.17.4"
+  "require-dev": {
+    "mockery/mockery": "~0.9",
+    "phpunit/phpunit": "~4.0|~5.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Laravel\\Amaranth\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
   }
 }
