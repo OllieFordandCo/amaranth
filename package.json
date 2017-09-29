@@ -2,7 +2,7 @@
   "name": "OllieFordandCo/amaranth",
   "description": "Laravel engine to power directory listing websites",
   "keywords": ["directory", "laravel"],
-  "license": "MIT",
+  "license": "UNLICENSED",
   "authors": [
     {
       "name": "Ruben Madila",
@@ -22,7 +22,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Laravel\\Amaranth\\": "src/"
+      "Mdl\\Amaranth\\": "src/"
     }
   },
   "autoload-dev": {
