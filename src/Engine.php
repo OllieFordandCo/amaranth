@@ -10,7 +10,7 @@ class Amaranth extends Manager implements Contracts\Factory
     /**
      * Get a driver instance.
      *
-     * @param  string  $driver
+
      * @return mixed
      */
     public function with($driver)
@@ -28,4 +28,5 @@ class Amaranth extends Manager implements Contracts\Factory
     {
         throw new InvalidArgumentException('No Amaranth driver was specified.');
     }
+
 }
