@@ -10,13 +10,14 @@ class Amaranth extends Manager implements Contracts\Factory
     /**
      * Get a driver instance.
      *
-
+     * @param string $driver
      * @return mixed
      */
     public function with($driver)
     {
         return $this->driver($driver);
     }
+
     /**
      * Get the default driver name.
      *
