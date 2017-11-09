@@ -8,7 +8,7 @@
     <title>{{config('app.name', 'amaranth')}}</title>
 
     <!-- Fonts -->
-    <link href="{{asset('fonts/webfonts.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{asset('/vendor/amaranth/fonts/webfonts.css')}}" rel="stylesheet" type="text/css">
 
     <!-- Styles -->
     <style>
