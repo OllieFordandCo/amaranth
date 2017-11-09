@@ -3,6 +3,7 @@
   "description": "Laravel engine to power directory listing websites",
   "keywords": ["directory", "laravel"],
   "license": "UNLICENSED",
+  "homepage": "https://www.ollieford.co.uk/",
   "authors": [
     {
       "name": "Ruben Madila",
@@ -24,9 +25,11 @@
     "branch-alias": {
       "dev-master": "0.1.2-dev"
     },
-    "providers": [
-      "OllieFordandCo\\Amaranth\\AmaranthServiceProvider"
-    ]
+    "laravel": {
+      "providers": [
+        "OllieFordandCo\\Amaranth\\AmaranthServiceProvider"
+      ]
+    }
   },
   "autoload": {
     "psr-4": {
