@@ -8,7 +8,7 @@
     <title>esvibe</title>
 
     <!-- Fonts -->
-    <link href="{{base_url('/')}}fonts/stylesheet.css" rel="stylesheet" type="text/css">
+    <link href="{{asset('fonts/webfonts.css')}}" rel="stylesheet" type="text/css">
 
     <!-- Styles -->
     <style>
