@@ -20,6 +20,10 @@ class AmaranthServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->mergeConfigFrom(
+            __DIR__.'/config/amaranth.php', 'amaranth'
+        );
+
         $this->app->singleton('Mdl\Amaranth\Contracts\Factory', function ($app) {
             return new Engine($app);
         });
@@ -60,6 +64,11 @@ class AmaranthServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__.'/resources/views', 'amaranth');
         $this->publishes([
             __DIR__.'/resources/views' => resource_path('views/vendor/amaranth'),
+        ]);
+
+        // Config
+        $this->publishes([
+            __DIR__.'/config/amaranth.php' => config_path('amaranth.php'),
         ]);
 
         // Assets
