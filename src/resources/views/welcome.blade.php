@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>esvibe</title>
+    <title>{{config('app.name', 'amaranth')}}</title>
 
     <!-- Fonts -->
     <link href="{{asset('fonts/webfonts.css')}}" rel="stylesheet" type="text/css">
@@ -79,7 +79,7 @@
 <div class="flex-center position-ref full-height">
     <div class="content">
         <div class="title m-b-md">
-            esvibe
+            {{config('app.name', 'amaranth')}}
         </div>
     </div>
 </div>
