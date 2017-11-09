@@ -46,8 +46,6 @@ class AmaranthServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->package('OllieFordandCo/Amaranth', 'amaranth');
-
         $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
 
         // Migrations
