@@ -1,6 +1,6 @@
 <?php
 
-namespace Mdl\Amaranth;
+namespace OllieFordandCo\Amaranth;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -24,7 +24,7 @@ class AmaranthServiceProvider extends ServiceProvider
             __DIR__ . '../config/amaranth.php', 'amaranth'
         );
 
-        $this->app->singleton('Mdl\Amaranth\Contracts\Factory', function ($app) {
+        $this->app->singleton('OllieFordandCo\Amaranth\Contracts\Factory', function ($app) {
             return new Engine($app);
         });
     }
@@ -36,7 +36,7 @@ class AmaranthServiceProvider extends ServiceProvider
      */
     public function provides()
     {
-        return ['Mdl\Amaranth\Contracts\Factory'];
+        return ['OllieFordandCo\Amaranth\Contracts\Factory'];
     }
 
     /**

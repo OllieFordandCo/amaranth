@@ -1,6 +1,6 @@
 <?php
 
-namespace Mdl\Amaranth\Contracts;
+namespace OllieFordandCo\Amaranth\Contracts;
 
 interface Factory
 {
@@ -8,7 +8,7 @@ interface Factory
      * Get an OAuth provider implementation.
      *
      * @param  string  $driver
-     * @return \Mdl\Amaranth\Contracts\Provider
+     * @return \OllieFordandCo\Amaranth\Contracts\Provider
      */
     public function driver($driver = null);
 }

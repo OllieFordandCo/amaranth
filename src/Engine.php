@@ -1,6 +1,6 @@
 <?php
 
-namespace Mdl\Amaranth;
+namespace OllieFordandCo\Amaranth;
 
 use InvalidArgumentException;
 use Illuminate\Support\Manager;

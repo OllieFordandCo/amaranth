@@ -25,15 +25,12 @@
       "dev-master": "0.1.2-dev"
     },
     "providers": [
-      "Mdl\\Amaranth\\AmaranthServiceProvider"
-    ],
-    "aliases": {
-      "Debugbar": "Barryvdh\\Debugbar\\Facade"
-    }
+      "OllieFordandCo\\Amaranth\\AmaranthServiceProvider"
+    ]
   },
   "autoload": {
     "psr-4": {
-      "Mdl\\Amaranth\\": "src/"
+      "OllieFordandCo\\Amaranth\\": "src/"
     }
   },
   "autoload-dev": {

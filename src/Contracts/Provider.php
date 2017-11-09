@@ -1,6 +1,6 @@
 <?php
 
-namespace Mdl\Amaranth\Contracts;
+namespace OllieFordandCo\Amaranth\Contracts;
 
 interface Provider
 {
