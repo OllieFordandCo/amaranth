@@ -1,0 +1,190 @@
+// Variables
+//
+//
+
+// Table of Contents
+//
+// Utilities
+// Reset
+// Defaults
+// Colours
+// Spacers
+// Media Breakpoints
+// Grid Layouts
+// Buttons
+
+// Utilities
+
+@mixin _assert-ascending($map, $map-name) {
+  $prev-key: null;
+  $prev-num: null;
+  @each $key, $num in $map {
+    @if $prev-num == null {
+      // Do nothing
+    } @else if not comparable($prev-num, $num) {
+      @warn "Potentially invalid value for #{$map-name}: This map must be in ascending order, but key '#{$key}' has value #{$num} whose unit makes it incomparable to #{$prev-num}, the value of the previous key '#{$prev-key}' !";
+    } @else if $prev-num >= $num {
+      @warn "Invalid value for #{$map-name}: This map must be in ascending order, but key '#{$key}' has value #{$num} which isn't greater than #{$prev-num}, the value of the previous key '#{$prev-key}' !";
+    }
+    $prev-key: $key;
+    $prev-num: $num;
+  }
+}
+
+// Replace `$search` with `$replace` in `$string`
+// @author Hugo Giraudel
+// @param {String} $string - Initial string
+// @param {String} $search - Substring to replace
+// @param {String} $replace ('') - New value
+// @return {String} - Updated string
+@function str-replace($string, $search, $replace: "") {
+  $index: str-index($string, $search);
+
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+
+  @return $string;
+}
+
+@mixin _assert-starts-at-zero($map) {
+  $values: map-values($map);
+  $first-value: nth($values, 1);
+  @if $first-value != 0 {
+    @warn "First breakpoint in `$media-breakpoints` must start at 0, but starts at #{$first-value}.";
+  }
+}
+
+// Reset
+
+$body-color: #535353;
+$body-bg: #f4f7f8;
+
+
+// Colours
+
+$danger: #e62e50;
+$success: #9acd32;
+$black: #000;
+
+// Defaults
+
+$default-border-width: 1px;
+$default-border-colour: lighten($black, 80%);
+$disallow-overflow: true; // For responsive images by default
+
+
+// Spacers
+
+$spacer: 1rem;
+$spacers: (
+        0: 0,
+        1: ($spacer * .5),
+        2: $spacer,
+        3: ($spacer * 2)
+);
+$responsive-spacer: true;
+
+$use-important:                 true;
+$paddings-use-important:        $use-important;
+$margins-use-important:         $use-important;
+$important-paddings:            if($paddings-use-important, " !important", "");
+$important-margins:             if($margins-use-important, " !important", "");
+
+//
+// Media Breakpoints
+//
+
+$media-breakpoints: (
+        xs: 0,
+        sm: 576px,
+        md: 768px,
+        lg: 992px,
+        xl: 1200px
+);
+@include _assert-ascending($media-breakpoints, "$grid-breakpoints");
+@include _assert-starts-at-zero($media-breakpoints);
+
+//
+// Grid Layout
+//
+
+$grid-columns: 12;
+$grid-gutter-width: 2rem;
+
+$container-max-widths: (
+        xs: 540px,
+        sm: 720px,
+        md: 960px,
+        lg: 1140px
+);
+@include _assert-ascending($container-max-widths, "$container-max-widths");
+
+$container-default-width: map-get($container-max-widths, md);
+
+/*
+ * Typography
+ */
+
+$default-font-stack: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
+$font-family-base: 'geomanistregular', $default-font-stack;
+$font-size-base: 1rem;
+$font-weight-base: 300;
+$font-color: $body-color;
+$line-height-base: 1.5;
+
+$font-size-h1: 2.5rem;
+$font-size-h2: 2rem;
+$font-size-h3: 1.75rem;
+$font-size-h4: 1.5rem;
+$font-size-h5: 1.25rem;
+$font-size-h6: 1rem;
+
+$headings-margin-top: $spacer;
+$headings-margin-bottom: ($spacer / 1.5);
+$headings-font-family:   inherit;
+$headings-font-weight:   600;
+$headings-line-height:   1.1;
+$headings-color:         #777;
+
+$display-sizes: (
+        1: 6rem,
+        2: 5.5rem,
+        3: 4.5rem,
+        4: 3.5rem
+);
+
+$display-weights: (
+        1: 600,
+        2: 600,
+        3: 600,
+        4: 600
+);
+
+$display-line-height: $headings-line-height;
+
+$lead-font-size:   1.25rem;
+$lead-font-weight: 400;
+
+$small-font-size: 80%;
+
+$hr-border-color: rgba($black,.1);
+$hr-border-width: 1px;
+
+
+// Forms & Inputs
+
+$input-border-width: $default-border-width;
+$input-border-colour: $default-border-colour;
+$input-line-height: 1.35;
+$label-font-weight:  $headings-font-weight;
+
+
+// Buttons
+
+$btn-border-width: $default-border-width;
+
+
+// Tables
+
+$default-table-border: $default-border-width solid;

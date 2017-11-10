@@ -1,47 +1,48 @@
 <!doctype html>
-<html lang="{{ app()->getLocale() }}">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>{{config('app.name', 'amaranth')}}</title>
+    <title>amaranth</title>
 
     <!-- Fonts -->
-    <link href="{{asset('/vendor/amaranth/assets/amaranth-ui.css')}}" rel="stylesheet" type="text/css">
+    <link href="../assets/css/amaranth-ui.css" rel="stylesheet" type="text/css">
 
     <!-- Styles -->
     <style>
         html, body {
             background-color: #f4f7f8;
-            color: #636b6f;
+            color: #767676;
             font-weight: 400;
-            height: 100vh;
+            height: 100%;
             margin: 0;
+            overflow-x: hidden;
+        }
+        .content {
+            text-align: center;
         }
 
         .full-height {
-            height: 100vh;
-        }
-
-        .content {
-            text-align: center;
-            color: #00c9ed;
+            height: 100%;
         }
 
         .title {
-            color: #00c9ed !important;
+            color: #e32759 !important;
             font-size: 84px;
             font-family: 'geomanistregular', sans-serif;
-            background: -webkit-linear-gradient(135deg, #aa04d8 0%,#00c9ed 100%);
+            background: -webkit-linear-gradient(101deg, #d20674 0%,#e32759 86%);
             -webkit-background-clip: text;
             background-repeat: no-repeat;
-            color: transparent;
+            background-size: 100%;
             letter-spacing: -0.17rem;
-            text-indent: -0.04em;
             line-height: 1em;
             font-weight: 500;
             -webkit-text-fill-color: transparent;
+        }
+        p {
+            font-weight: 400;
         }
     </style>
 </head>
@@ -49,8 +50,8 @@
 <div class="p-relative full-height">
     <div class="content v-align">
         <div>
-            <div class="title d-inline-block mx-auto">{{config('app.name', 'amaranth')}}</div>
-            <p class="text-thin">{{config('app.slogan', 'Social Network Engine for Laravel')}}</p>
+            <div class="title d-inline-block mx-auto">amaranth</div>
+            <p class="text-thin">Social Network Engine for Laravel</p>
         </div>
     </div>
 </div>

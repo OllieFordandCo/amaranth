@@ -32,7 +32,7 @@
   },
   "dependencies": {
     "bourbon-neat": "2.1.0",
-    "indigo": "git+ssh://git@github.com:OllieFordandCo/indigo.git",
+    "indigo": "https://madila:a0ed0fe21f71f47bec13d6cf6070ec5ff903f18b@github.com/OllieFordandCo/indigo#master",
     "mikado": "git://github.com/OllieFordandCo/mikado.git#master"
   }
 }
