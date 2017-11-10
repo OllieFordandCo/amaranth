@@ -18,15 +18,11 @@
             font-weight: 400;
             height: 100vh;
             margin: 0;
+            overflow-x: hidden;
         }
 
         .full-height {
             height: 100vh;
-        }
-
-        .content {
-            text-align: center;
-            color: #00c9ed;
         }
 
         .title {
@@ -47,7 +43,7 @@
 </head>
 <body>
 <div class="p-relative full-height">
-    <div class="content v-align">
+    <div class="content text-center v-align">
         <div>
             <div class="title d-inline-block mx-auto">{{config('app.name', 'amaranth')}}</div>
             <p class="text-thin">{{config('app.slogan', 'Social Network Engine for Laravel')}}</p>
