@@ -1,0 +1,38 @@
+{
+  "name": "amaranth-ui",
+  "version": "0.0.1",
+  "description": "Amaranth's UI using Mikado & Indigo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "admin",
+    "interface",
+    "UI",
+    "UX"
+  ],
+  "author": "Ruben Madila",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "async": "^2.5.0",
+    "autoprefixer": "^7.1.2",
+    "cssnano": "^v4.0.0-rc.1",
+    "gulp": "^3.9.1",
+    "gulp-minify": "0.0.15",
+    "gulp-plumber": "^1.1.0",
+    "gulp-postcss": "^7.0.0",
+    "gulp-rename": "~1.2.*",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.0",
+    "gulp-util": "^3.0.7",
+    "jshint": "^2.9.2",
+    "merge-stream": "^1.0.0",
+    "pump": "^1.0.1"
+  },
+  "dependencies": {
+    "bourbon-neat": "2.1.0",
+    "indigo": "git+ssh://git@github.com:OllieFordandCo/indigo.git",
+    "mikado": "git://github.com/OllieFordandCo/mikado.git#master"
+  }
+}
