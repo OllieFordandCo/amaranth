@@ -44,9 +44,9 @@
 <body>
 <div class="p-relative full-height">
     <div class="content text-center v-align">
-        <div>
-            <div class="title d-inline-block mx-auto">{{config('app.name', 'amaranth')}}</div>
-            <p class="text-thin">{{config('app.slogan', 'Social Network Engine for Laravel')}}</p>
+        <div class="px-3">
+            <div class="title d-inline-block mx-auto px-1">{{config('app.name', 'amaranth')}}</div>
+            <p class="text-thin px-3">{{config('app.slogan', 'Social Network Engine for Laravel')}}</p>
         </div>
     </div>
 </div>
