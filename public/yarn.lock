@@ -1316,8 +1316,8 @@ indexes-of@^1.0.1:
   resolved "https://registry.yarnpkg.com/indexes-of/-/indexes-of-1.0.1.tgz#f30f716c8e2bd346c7b67d3df3915566a7c05607"
 
 "indigo@https://madila:a0ed0fe21f71f47bec13d6cf6070ec5ff903f18b@github.com/OllieFordandCo/indigo#master":
-  version "0.0.4"
-  resolved "https://madila:a0ed0fe21f71f47bec13d6cf6070ec5ff903f18b@github.com/OllieFordandCo/indigo#4ac14adf8b1675185b3bebbf03a4ddd157d453ef"
+  version "0.1.0"
+  resolved "https://madila:a0ed0fe21f71f47bec13d6cf6070ec5ff903f18b@github.com/OllieFordandCo/indigo#14adf887ec0535888841c79856c6ab86dbe6ead6"
   dependencies:
     bourbon-neat "2.1.0"
     mikado "git://github.com/OllieFordandCo/mikado.git#master"

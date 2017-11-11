@@ -26,7 +26,7 @@
         .title {
             color: #e32759 !important;
             font-family: 'geomanistregular', sans-serif;
-            background: -webkit-linear-gradient(101deg, #d20674 0%,#e32759 86%);
+            background: -webkit-linear-gradient(101deg, {{config('app.primary_colour', '#d20674')}} 0%,{{config('app.secondary_colour', '#e32759')}} 86%);
             -webkit-background-clip: text;
             background-repeat: no-repeat;
             background-size: 100%;
