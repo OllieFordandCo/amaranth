@@ -60,7 +60,6 @@
 $body-color: #535353;
 $body-bg: #f4f7f8;
 
-
 // Colours
 
 $danger: #e62e50;
@@ -70,7 +69,8 @@ $black: #000;
 // Defaults
 
 $default-border-width: 1px;
-$default-border-colour: transparent;
+$default-border-colour: lighten($black, 50%);
+$default-border-radius: .2rem;
 $disallow-overflow: true; // For responsive images by default
 
 
@@ -128,6 +128,7 @@ $container-default-width: map-get($container-max-widths, md);
 
 $default-font-stack: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
 $font-family-base: 'geomanistregular', $default-font-stack;
+$root-font-size: 15px;
 $font-size-base: 1rem;
 $font-weight-base: 300;
 $font-color: $body-color;
@@ -143,7 +144,7 @@ $font-size-h6: 1rem;
 $headings-margin-top: $spacer;
 $headings-margin-bottom: ($spacer / 1.5);
 $headings-font-family:   inherit;
-$headings-font-weight:   600;
+$headings-font-weight:   500;
 $headings-line-height:   1.1;
 $headings-color:         #777;
 

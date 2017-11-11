@@ -14,39 +14,69 @@
     <style>
         html, body {
             background-color: #f4f7f8;
-            color: #636b6f;
+            color: #767676;
             font-weight: 400;
-            height: 100vh;
+            height: 100%;
             margin: 0;
             overflow-x: hidden;
         }
-
         .full-height {
-            height: 100vh;
+            height: 100%;
         }
-
         .title {
-            color: #00c9ed !important;
-            font-size: 84px;
+            color: #e32759 !important;
             font-family: 'geomanistregular', sans-serif;
-            background: -webkit-linear-gradient(135deg, #aa04d8 0%,#00c9ed 100%);
+            background: -webkit-linear-gradient(101deg, #d20674 0%,#e32759 86%);
             -webkit-background-clip: text;
             background-repeat: no-repeat;
-            color: transparent;
+            background-size: 100%;
             letter-spacing: -0.17rem;
-            text-indent: -0.04em;
             line-height: 1em;
             font-weight: 500;
             -webkit-text-fill-color: transparent;
+        }
+        p {
+            font-weight: 400;
         }
     </style>
 </head>
 <body>
 <div class="p-relative full-height">
-    <div class="content text-center v-align">
+    <div class="content v-align">
         <div class="px-3">
-            <div class="title d-inline-block mx-auto px-1">{{config('app.name', 'amaranth')}}</div>
-            <p class="text-thin px-3">{{config('app.slogan', 'Social Network Engine for Laravel')}}</p>
+            <section class="container-xs grid-row mx-auto py-1">
+                <header class="text-center p-2">
+                    <div class="display-3 title d-inline-block mx-auto">{{config('app.name', 'amaranth')}}</div>
+                    <p class="text-thin">{{config('app.slogan', 'Social Network Engine for Laravel')}}</p>
+                </header>
+                <div class="grid-row grid-gutter d-block">
+                    <div class="col-12">
+                        <form class="px-3 cf">
+                            <h1 class="h2 mt-0 sr-only">Login</h1>
+                            <fieldset>
+                                <legend class="sr-only">Access your account</legend>
+                                <label for="username" class="sr-only">Username:</label>
+                                <input type="text" id="username" name="username" maxlength="12" placeholder="Username" value=""
+                                       required><br/>
+                                <label for="password" class="sr-only">Password:</label>
+                                <input type="password" id="password" name="password" maxlength="12" placeholder="Your Password" required>
+                                <div class="checkbox mb-2">
+                                    <input type="checkbox" class="mr-1" id="tcs" name="tcs">
+                                    <label for="tcs" class="text-thin"> Remember this device</label>
+                                </div>
+                            </fieldset>
+                            <button class="d-block col-12 btn btn-border-red">Login</button>
+                        </form>
+                    </div>
+                    <div class="col-12 cf py-2 px-3">
+                        <a class="float-left" href="#"><small>Register for the beta</small></a>
+                        <a href="#" class="float-right"><small>Forgot Password?</small></a>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="p-absolute p-bottom p-left p-right text-center">
+            <footer><small class="text-grey-light p-2 d-block">Copyright &copy. Ollie Ford & Co. All rights reserved.</small></footer>
         </div>
     </div>
 </div>

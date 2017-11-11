@@ -20,17 +20,11 @@
             margin: 0;
             overflow-x: hidden;
         }
-        .content {
-            text-align: center;
-        }
-
         .full-height {
             height: 100%;
         }
-
         .title {
             color: #e32759 !important;
-            font-size: 84px;
             font-family: 'geomanistregular', sans-serif;
             background: -webkit-linear-gradient(101deg, #d20674 0%,#e32759 86%);
             -webkit-background-clip: text;
@@ -49,9 +43,40 @@
 <body>
 <div class="p-relative full-height">
     <div class="content v-align">
-        <div>
-            <div class="title d-inline-block mx-auto">amaranth</div>
-            <p class="text-thin">Social Network Engine for Laravel</p>
+        <div class="px-3">
+            <section class="container-xs grid-row mx-auto py-1">
+                <header class="text-center p-2">
+                    <div class="display-3 title d-inline-block mx-auto">amaranth</div>
+                    <p class="text-thin">Social Network Engine for Laravel</p>
+                </header>
+                <div class="grid-row grid-gutter d-block">
+                    <div class="col-12">
+                        <form class="px-3 cf">
+                            <h1 class="h2 mt-0 sr-only">Login</h1>
+                            <fieldset>
+                                <legend class="sr-only">Access your account</legend>
+                                <label for="username" class="sr-only">Username:</label>
+                                <input type="text" id="username" name="username" maxlength="12" placeholder="Username" value=""
+                                       required><br/>
+                                <label for="password" class="sr-only">Password:</label>
+                                <input type="password" id="password" name="password" maxlength="12" placeholder="Your Password" required>
+                                <div class="checkbox mb-2">
+                                    <input type="checkbox" class="mr-1" id="tcs" name="tcs">
+                                    <label for="tcs" class="text-thin"> Remember this device</label>
+                                </div>
+                            </fieldset>
+                            <button class="d-block col-12 btn btn-border-red">Login</button>
+                        </form>
+                    </div>
+                    <div class="col-12 cf py-2 px-3">
+                        <a class="float-left" href="#"><small>Register for the beta</small></a>
+                        <a href="#" class="float-right"><small>Forgot Password?</small></a>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="p-absolute p-bottom p-left p-right text-center">
+            <footer><small class="text-grey-light p-2 d-block">Copyright &copy. Ollie Ford & Co. All rights reserved.</small></footer>
         </div>
     </div>
 </div>
