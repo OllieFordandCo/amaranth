@@ -71,10 +71,10 @@
                     <div class="col-12 cf py-2">
                         <a class="float-left" href="#"><small>Register for the beta</small></a>
                         <a href="#" class="float-right"><small>Forgot Password?</small></a>
-                        <hr>
-                        <div class="text-center">
-                            <footer><small class="text-grey-light p-2 d-block">Copyright &copy. Ollie Ford & Co. All rights reserved.</small></footer>
-                        </div>
+                    </div>
+                    <hr>
+                    <div class="col-12">
+                        <footer><small class="text-grey-light p-2 d-block">Copyright &copy. Ollie Ford & Co. All rights reserved.</small></footer>
                     </div>
                 </div>
             </section>
