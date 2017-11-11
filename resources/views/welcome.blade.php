@@ -72,8 +72,8 @@
                         <a class="float-left" href="#"><small>Register for the beta</small></a>
                         <a href="#" class="float-right"><small>Forgot Password?</small></a>
                     </div>
-                    <hr>
                     <div class="col-12">
+                        <hr>
                         <footer><small class="text-grey-light p-2 d-block">Copyright &copy. Ollie Ford & Co. All rights reserved.</small></footer>
                     </div>
                 </div>
