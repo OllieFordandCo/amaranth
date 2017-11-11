@@ -74,7 +74,7 @@
                     </div>
                     <div class="col-12">
                         <hr>
-                        <footer><small class="text-grey-light p-2 d-block">Copyright &copy. Ollie Ford & Co. All rights reserved.</small></footer>
+                        <footer><small class="text-grey-light text-center p-2 d-block">Copyright &copy. Ollie Ford & Co. All rights reserved.</small></footer>
                     </div>
                 </div>
             </section>
