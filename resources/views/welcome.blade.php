@@ -47,7 +47,7 @@
             <section class="container-xs grid-row mx-auto py-1">
                 <header class="text-center p-2">
                     <div class="display-3 title d-inline-block px-1 mx-auto">{{config('app.name', 'amaranth')}}</div>
-                    <p class="text-thin">{{config('app.slogan', 'Social Network Engine for Laravel')}}</p>
+                    <small class="d-block text-thin text-grey-light">{{config('app.slogan', 'Social Network Engine for Laravel')}}</small>
                 </header>
                 <div class="grid-row grid-gutter m-collapse-1 d-block">
                     <div class="col-12">
@@ -71,12 +71,13 @@
                     <div class="col-12 cf py-2">
                         <a class="float-left" href="#"><small>Register for the beta</small></a>
                         <a href="#" class="float-right"><small>Forgot Password?</small></a>
+                        <hr>
+                        <div class="text-center">
+                            <footer><small class="text-grey-light p-2 d-block">Copyright &copy. Ollie Ford & Co. All rights reserved.</small></footer>
+                        </div>
                     </div>
                 </div>
             </section>
-        </div>
-        <div class="p-absolute p-bottom p-left p-right text-center">
-            <footer><small class="text-grey-light p-2 d-block">Copyright &copy. Ollie Ford & Co. All rights reserved.</small></footer>
         </div>
     </div>
 </div>
