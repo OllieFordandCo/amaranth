@@ -7,7 +7,7 @@
 
     <title>{{config('app.name', 'amaranth')}}</title>
 
-    <!-- Fonts -->
+    <!-- Stylesheets -->
     <link href="{{asset('/vendor/amaranth/assets/css/amaranth-ui.css')}}" rel="stylesheet" type="text/css">
 
     <!-- Styles -->

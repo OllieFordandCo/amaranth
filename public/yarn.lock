@@ -1317,7 +1317,7 @@ indexes-of@^1.0.1:
 
 "indigo@https://madila:a0ed0fe21f71f47bec13d6cf6070ec5ff903f18b@github.com/OllieFordandCo/indigo#master":
   version "0.0.4"
-  resolved "https://madila:a0ed0fe21f71f47bec13d6cf6070ec5ff903f18b@github.com/OllieFordandCo/indigo#09613f970596ecbc18bff5d054ce0c12bd26a012"
+  resolved "https://madila:a0ed0fe21f71f47bec13d6cf6070ec5ff903f18b@github.com/OllieFordandCo/indigo#8cfaff250733b228a6faa88246b93b75bb0c63c8"
   dependencies:
     bourbon-neat "2.1.0"
     mikado "git://github.com/OllieFordandCo/mikado.git#master"

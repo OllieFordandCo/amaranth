@@ -224,19 +224,19 @@ input {
   line-height: 1.35;
   overflow: visible;
   padding: 0.5rem 1rem;
-  border: 1px solid #cccccc;
+  border: 1px solid transparent;
   margin-bottom: 1rem;
   width: 100%; }
 
 textarea {
   padding: 0.5rem 1rem;
-  border: 1px solid #cccccc;
+  border: 1px solid transparent;
   margin-bottom: 1rem;
   width: 100%; }
 
 select {
   padding: 0.5rem 1rem;
-  border: 1px solid #cccccc;
+  border: 1px solid transparent;
   margin-bottom: 1rem;
   width: 100%;
   line-height: 1.35; }
@@ -1950,6 +1950,33 @@ th {
 @media (min-width: 1200px) {
   .display-4 {
     font-size: 3.5rem; } }
+
+.text-ultra-light {
+  font-weight: 100 !important; }
+
+.text-light {
+  font-weight: 200 !important; }
+
+.text-thin {
+  font-weight: 300 !important; }
+
+.text-regular {
+  font-weight: 400 !important; }
+
+.text-book {
+  font-weight: 500 !important; }
+
+.text-medium {
+  font-weight: 600 !important; }
+
+.text-bold {
+  font-weight: 700 !important; }
+
+.text-black {
+  font-weight: 800 !important; }
+
+.text-ultra {
+  font-weight: 900 !important; }
 
 @font-face {
   font-family: "geomanistregular";
