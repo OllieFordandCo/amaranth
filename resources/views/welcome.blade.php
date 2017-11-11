@@ -43,15 +43,15 @@
 <body>
 <div class="p-relative full-height">
     <div class="content v-align">
-        <div class="px-3">
+        <div>
             <section class="container-xs grid-row mx-auto py-1">
                 <header class="text-center p-2">
-                    <div class="display-3 title d-inline-block mx-auto">{{config('app.name', 'amaranth')}}</div>
+                    <div class="display-3 title d-inline-block px-1 mx-auto">{{config('app.name', 'amaranth')}}</div>
                     <p class="text-thin">{{config('app.slogan', 'Social Network Engine for Laravel')}}</p>
                 </header>
-                <div class="grid-row grid-gutter d-block">
+                <div class="grid-row grid-gutter m-collapse-1 d-block">
                     <div class="col-12">
-                        <form class="px-3 cf">
+                        <form>
                             <h1 class="h2 mt-0 sr-only">Login</h1>
                             <fieldset>
                                 <legend class="sr-only">Access your account</legend>
@@ -68,7 +68,7 @@
                             <button class="d-block col-12 btn btn-border-red">Login</button>
                         </form>
                     </div>
-                    <div class="col-12 cf py-2 px-3">
+                    <div class="col-12 cf py-2">
                         <a class="float-left" href="#"><small>Register for the beta</small></a>
                         <a href="#" class="float-right"><small>Forgot Password?</small></a>
                     </div>
