@@ -61,10 +61,16 @@ class AmaranthServiceProvider extends ServiceProvider
         ], 'amaranth-translations');
 
         // Views
-        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'amaranth');
+        $this->loadViewsFrom(__DIR__ . '/../resources/views/scaffold', 'amaranth');
+        $this->publishes([
+            __DIR__ . '/../resources/views' => resource_path('views'),
+        ], 'amaranth-scaffold-views');
+
+        // Views
+        $this->loadViewsFrom(__DIR__ . '/../resources/views/vendor', 'amaranth');
         $this->publishes([
             __DIR__ . '/../resources/views' => resource_path('views/vendor/amaranth'),
-        ], 'amaranth-views');
+        ], 'amaranth-vendor-views');
 
         // Config
         $this->publishes([
