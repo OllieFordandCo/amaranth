@@ -10,6 +10,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('vendor.amaranth.welcome');
-});
+Auth::routes();
+
+Route::get('/', 'OllieFordandCo\Amaranth\Http\HomeController@index');
