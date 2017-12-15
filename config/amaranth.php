@@ -25,6 +25,7 @@ return [
     */
 
     'allow_registrations' => env('AMARANTH_REGISTRATION', false),
-    'allow_invitations' => env('AMARANTH_BETA', true)
+    // Only applicable if registrations are not allowed
+    'allow_beta' => env('AMARANTH_BETA', true)
 
 ];
