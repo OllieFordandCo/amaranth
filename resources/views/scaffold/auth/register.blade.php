@@ -44,7 +44,7 @@
                         </div>
                     </fieldset>
                     <button type="submit" class="d-block col-12 btn btn-border-red">Register</button>
-                @elseif(config('amaranth.allow_invitations'))
+                @elseif(config('amaranth.allow_beta'))
                     <fieldset>
                         <legend class="text-thin text-center">Register your interest</legend>
                         <p class="text-center">We will let you know once the registration it's open</p>
@@ -56,7 +56,7 @@
                             @endcomponent
                         @endif
                     </fieldset>
-                    <button type="submit" class="d-block col-12 btn btn-border-red">Send</button>
+                    <button type="submit" class="d-block col-12 btn btn-border-red">Get access to the beta</button>
                 @else
                     @component('components/alert', ['class' => 'bg-grey'])
                         <strong>Apologies, but registrations are disabled.</strong>
