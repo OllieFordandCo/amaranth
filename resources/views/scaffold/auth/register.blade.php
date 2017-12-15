@@ -1,44 +1,54 @@
-@extends('amaranth::layouts.auth')
+@extends('layouts.auth')
 
 @section('content')
-    <div class="p-relative full-height">
-        <div class="content v-align">
-            <div>
-                <section class="container-xs grid-row mx-auto py-1">
-                    <header class="text-center p-2">
-                        <div class="display-3 title d-inline-block px-1 mx-auto"><a href="{{ url('/') }}">{{config('app.name', 'amaranth')}}<a/>></div>
-                        <small class="d-block text-thin text-grey-light">{{config('app.slogan', 'Social Network Engine for Laravel')}}</small>
-                    </header>
-                    <div class="grid-row grid-gutter m-collapse-1 d-block">
-                        <div class="col-12">
-                            <form class="form-horizontal" method="POST" {{ route('login') }}>
-                                <h1 class="h2 mt-0 sr-only">Login</h1>
-                                {{ csrf_field() }}
-                                <hr/>
-                                <fieldset>
-                                    <legend class="text-thin text-center">Register your interest</legend>
-                                    <label for="email" class="sr-only">Email:</label>
-                                    <input type="text" id="email" name="email" maxlength="12" placeholder="Email" value="{{ old('email') }}" autofocus required {{ $errors->has('email') ? 'class="invalid-input"' : '' }}><br/>
-                                    @if ($errors->has('email'))
-                                        <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                    @endif
-                                </fieldset>
-                                <button class="d-block col-12 btn btn-border-red">Get access to the beta</button>
-                            </form>
-                        </div>
-                        <div class="col-12 cf py-2">
-                            <a class="float-left" href="{{ route('login') }}"><small>Login</small></a>
-                            <a href="{{ route('password.request') }}" class="float-right"><small>Forgot Password?</small></a>
-                        </div>
-                        <div class="col-12">
-                            <hr>
-                            <footer><small class="text-grey-light text-center p-2 d-block">Copyright &copy. Ollie Ford & Co. All rights reserved.</small></footer>
-                        </div>
+    @component('components/auth-card')
+    <div class="grid-row grid-gutter m-collapse-1 d-block">
+        <div class="col-12">
+            <form method="POST" action="{{ route('register') }}">
+                {{ csrf_field() }}
+                <h1 class="h2 mt-0 sr-only">Register</h1>
+                <fieldset>
+                    <legend class="sr-only">Register an account</legend>
+                    <label for="username" class="sr-only">Username:</label>
+                    <input type="text" id="username"{{ $errors->has('username') ? ' class="has-error"' : '' }} name="username" maxlength="20" placeholder="Username" value="{{ old('username') }}" required><br/>
+                    @if ($errors->has('username'))
+                        @component('components/alert', ['class' => 'bg-red'])
+                            <strong>{{ $errors->first('username') }}</strong>
+                        @endcomponent
+                    @endif
+                    <label for="email" class="sr-only">Email:</label>
+                    <input type="text" id="email"{{ $errors->has('email') ? ' class="has-error"' : '' }} name="email" placeholder="Email" value="{{ old('email') }}" required><br/>
+                    @if ($errors->has('email'))
+                        @component('components/alert', ['class' => 'bg-red'])
+                            <strong>{{ $errors->first('email') }}</strong>
+                        @endcomponent
+                    @endif
+                    <label for="password" class="sr-only">Password:</label>
+                    <input type="password" id="password"{{ $errors->has('password') ? ' class="has-error"' : '' }} name="password" placeholder="Your Password" required>
+                    @if ($errors->has('password'))
+                        @component('components/alert', ['class' => 'bg-red'])
+                            <strong>{{ $errors->first('password') }}</strong>
+                        @endcomponent
+                    @endif
+                    <label for="password_confirmation" class="sr-only">Confirm Password:</label>
+                    <input type="password" id="password_confirmation"{{ $errors->has('password_confirmation') ? ' class="has-error"' : '' }} name="password_confirmation" placeholder="Confirm Password" required>
+                    @if ($errors->has('password_confirmation'))
+                        @component('components/alert', ['class' => 'bg-red'])
+                            <strong>{{ $errors->first('password_confirmation') }}</strong>
+                        @endcomponent
+                    @endif
+                    <div class="checkbox mb-2{{ $errors->has('tcs') ? ' has-error' : '' }}">
+                        <input type="checkbox" class="mr-1" id="tcs" name="tcs"{{ old('tcs') ? ' checked' : '' }}>
+                        <label for="tcs" class="text-thin"> I accept terms and conditions</label>
                     </div>
-                </section>
-            </div>
+                </fieldset>
+                <button type="submit" class="d-block col-12 btn btn-border-red">Register</button>
+            </form>
+        </div>
+        <div class="col-12 cf py-2">
+            <a class="float-left" href="{{ route('login') }}"><small>Login</small></a>
+            <a href="{{ route('password.request') }}" class="float-right"><small>Forgot Password?</small></a>
         </div>
     </div>
+    @endcomponent
 @endsection
