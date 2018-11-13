@@ -14,12 +14,23 @@ class AmaranthServiceProvider extends ServiceProvider
     protected $defer = false;
 
     /**
+     * List of commands to register for the package
+     *
+     * @var array
+     */
+    protected $commands = [
+        'OllieFordandCo\Amaranth\Commands\InstallCommand'
+    ];
+
+    /**
      * Register the service provider.
      *
      * @return void
      */
     public function register()
     {
+        $this->commands($this->commands);
+
         $this->mergeConfigFrom(
             __DIR__ . '/../config/amaranth.php', 'amaranth'
         );
@@ -46,6 +57,7 @@ class AmaranthServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+
         $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
 
         // Migrations
