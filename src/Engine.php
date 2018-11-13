@@ -5,7 +5,7 @@ namespace OllieFordandCo\Amaranth;
 use InvalidArgumentException;
 use Illuminate\Support\Manager;
 
-class Amaranth extends Manager implements Contracts\Factory
+class Amaranth implements Contracts\Factory
 {
     /**
      * Get a driver instance.
