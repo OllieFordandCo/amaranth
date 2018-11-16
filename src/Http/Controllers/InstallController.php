@@ -4,7 +4,7 @@ namespace OllieFordandCo\Amaranth\Http\Controllers;
 
 use OllieFordandCo\Amaranth\Http\Controller;
 
-class HomeController extends Controller
+class InstallController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -23,6 +23,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('amaranth::welcome');
+        return view('amaranth::install.init');
     }
 }

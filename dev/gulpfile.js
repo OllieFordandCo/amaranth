@@ -56,7 +56,7 @@ function postCss() {
     ];
     return gulp.src(['./src/css/**/*.css'])
         .pipe($.postcss(options))
-        .pipe(gulp.dest('./assets/css'));
+        .pipe(gulp.dest('./../public/assets/css'));
 }
 
 

@@ -1,9 +1,0 @@
-
-$geomanist_url: '#{$webfonts_url}geomanist/';
-
-@include webfont('geomanistregular', $geomanist_url, 'geomanist-medium-webfont', 400);
-@include webfont('geomanistregular', $geomanist_url, 'geomanist-regular-webfont', 400);
-@include webfont('geomanistregular', $geomanist_url, 'geomanist-book-webfont', 500);
-@include webfont('geomanistregular', $geomanist_url, 'geomanist-black-webfont', 700);
-@include webfont('geomanistregular', $geomanist_url, 'geomanist-bold-webfont', 600);
-@include webfont('geomanistregular', $geomanist_url, 'geomanist-light-webfont', 200);
