@@ -14,7 +14,8 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,600,700,800,900" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link href="{{asset('/vendor/amaranth/assets/css/amaranth-ui.css')}}" rel="stylesheet" type="text/css">
-
+    <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css" />
+    <script src="https://unpkg.com/simplebar@latest/dist/simplebar.js"></script>
     <style>
         html {
             text-rendering: optimizeLegibility;
@@ -33,6 +34,16 @@
             height: 100%;
             margin: 0;
             overflow-x: hidden;
+        }
+        .bg-half {
+            position: absolute;
+            top: -30px;
+            left: -30px;
+            right: -30px;
+            height: 50%;
+            z-index: 0;
+            background-color: #c30d40;
+            box-shadow: inset 0 0 30px rgba(0,0,0,0.2);
         }
         .full-height {
             height: 100%;
@@ -53,7 +64,7 @@
             border-radius: 7px;
         }
         .card.card-dark {
-            background-color: #333;
+            background: rgb(34,34,34); /* Old browsers */
             box-shadow: 0 0 30px rgba(0,0,0,0.5);
             border-right: 1px solid rgba(255,255,255,0.05);
             border-bottom: 1px solid rgba(255,255,255,0.05);
@@ -85,11 +96,15 @@
             background-color: #fff;
             display: inline-block;
         }
+        .scroll-content {
+            width: 100% !important;
+        }
     </style>
 </head>
 <body class="bg-primary">
+<div class="bg-half"></div>
 <div class="p-relative full-height">
-    <div class="content v-align">
+    <div class="content v-align p-relative">
         <div>
             <div class="container mx-auto">
                 <div class="grid-row text-center">
@@ -97,30 +112,22 @@
                         <h1 class="text-white display-3 my-1">Amaranth</h1>
                         <main class="card card-dark card-contained my-3">
                             <header class="px-3 py-1">
-                                <h5 class="my-1 text-grey-light text-thin">Installation</h5>
+                                <h5 class="my-1 text-grey-light text-thin">Getting Started</h5>
                             </header>
                             <article class="grid-row text-left">
-                                <div class="col-3 card-sidebar" style="height:300px;">
-                                    <ul class="list-unstyled py-2">
-                                        <li class="active"><a class="btn d-block px-3 py-2" href="#"><i class="orb mr-1 v-align-middle"></i> <span class="v-align-middle">Getting Started</span></a></li>
-                                        <li><a class="btn d-block px-3 py-2" href="#"><i class="orb mr-1 v-align-middle"></i> <span class="v-align-middle">General</span></a></li>
-                                        <li><a class="btn d-block px-3 py-2" href="#"><i class="orb mr-1 v-align-middle"></i> <span class="v-align-middle">Info</span></a></li>
-                                        <li><a class="btn d-block px-3 py-2" href="#"><i class="orb mr-1 v-align-middle"></i> <span class="v-align-middle">Settings</span></a></li>
-                                        <li><a class="btn d-block px-3 py-2" href="#"><i class="orb mr-1 v-align-middle"></i> <span class="v-align-middle">Status</span></a></li>
-                                    </ul>
-                                </div>
-                                <div class="col-9" style="height:300px;">
-                                    <h2 class="h4 text-white px-3 my-3">Welcome</h2>
-                                    <div class="card-block px-3 text-white">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <b>Hoc loco tenere se Triarius non potuit.</b> Sed id ne cogitari quidem potest quale sit, ut non repugnet ipsum sibi. Duo enim genera quae erant, fecit tria. <i>At eum nihili facit;</i> Vide, ne etiam menses! nisi forte eum dicis, qui, simul atque arripuit, interficit. Sed quanta sit alias, nunc tantum possitne esse tanta. Fortitudinis quaedam praecepta sunt ac paene leges, quae effeminari virum vetant in dolore. Duo Reges: constructio interrete. </p>
+                                <div class="col-12" style="height:450px;">
+                                    <div class="scroll-content text-center py-3 px-xl" data-simplebar>
+                                        <h2 class="h5 text-white mb-2">Let's get this show on the road!</h2>
+                                        <div class="card-block text-white">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <b>Hoc loco tenere se Triarius non potuit.</b> Sed id ne cogitari quidem potest quale sit, ut non repugnet ipsum sibi. Duo enim genera quae erant, fecit tria. <i>At eum nihili facit;</i> Vide, ne etiam menses! nisi forte eum dicis, qui, simul atque arripuit, interficit. Sed quanta sit alias, nunc tantum possitne esse tanta. Fortitudinis quaedam praecepta sunt ac paene leges, quae effeminari virum vetant in dolore. Duo Reges: constructio interrete. </p>
 
-                                        <p>Unum est sine dolore esse, alterum cum voluptate. <a href="http://loripsum.net/" target="_blank">Scrupulum, inquam, abeunti;</a> <mark>Itaque fecimus.</mark> Nec enim, dum metuit, iustus est, et certe, si metuere destiterit, non erit; </p>
+                                            <p>Unum est sine dolore esse, alterum cum voluptate. <a href="http://loripsum.net/" target="_blank">Scrupulum, inquam, abeunti;</a> <mark>Itaque fecimus.</mark> Nec enim, dum metuit, iustus est, et certe, si metuere destiterit, non erit; </p>
 
-                                        <p>Quod quidem iam fit etiam in Academia. <mark>Sed fortuna fortis;</mark> <mark>Egone quaeris, inquit, quid sentiam?</mark> <i>Aliter enim explicari, quod quaeritur, non potest.</i> Mihi vero, inquit, placet agi subtilius et, ut ipse dixisti, pressius. <b>Quid censes in Latino fore?</b> Et harum quidem rerum facilis est et expedita distinctio. </p>
+                                            <p>Quod quidem iam fit etiam in Academia. <mark>Sed fortuna fortis;</mark> <mark>Egone quaeris, inquit, quid sentiam?</mark> <i>Aliter enim explicari, quod quaeritur, non potest.</i> Mihi vero, inquit, placet agi subtilius et, ut ipse dixisti, pressius. <b>Quid censes in Latino fore?</b> Et harum quidem rerum facilis est et expedita distinctio. </p>
 
-
+                                            <a href="./install" class="btn btn-primary my-3">Start installation</a>
+                                        </div>
                                     </div>
-
                                 </div>
                             </article>
                         </main>
@@ -133,3 +140,5 @@
         </div>
     </div>
 </div>
+</body>
+</html>

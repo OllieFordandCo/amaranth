@@ -70,10 +70,14 @@ class AmaranthServiceProvider extends ServiceProvider
     public function register()
     {
 
-        $this->app['router']->middleware('install', 'your\namespace\MiddlewareClass');
+        $this->app['router']->aliasMiddleware('install', 'OllieFordandCo\Amaranth\Http\Middleware\InstallationAccess');
 
         $this->mergeConfigFrom(
             __DIR__ . '/../config/amaranth.php', 'amaranth'
+        );
+
+        $this->mergeConfigFrom(
+            __DIR__ . '/../config/dotenv-editor.php', 'dontenv-editor'
         );
 
         $this->app->singleton('OllieFordandCo\Amaranth\Contracts\Factory', function ($app) {

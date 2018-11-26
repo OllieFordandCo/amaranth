@@ -3,17 +3,38 @@
 namespace OllieFordandCo\Amaranth\Http\Controllers;
 
 use OllieFordandCo\Amaranth\Http\Controller;
+use Jackiedo\DotenvEditor\Facades\DotenvEditor;
+use Illuminate\Http\Request;
 
 class InstallController extends Controller
 {
+
+    protected $editor;
+
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(\DotenvEditor $editor)
     {
+        $this->middleware('install');
+        $this->editor = $editor;
+    }
 
+    public function update(Request $request)
+    {
+        $inputs = $request->except(['page', '_method']);
+        foreach($inputs as $key => $value) {
+            DotenvEditor::setKey($key, $value);
+        }
+        DotenvEditor::save();
+        return redirect('install?page=environment');
+    }
+
+    public function store()
+    {
+        return redirect('install?page=getting-started');
     }
 
     /**
