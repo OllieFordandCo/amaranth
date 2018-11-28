@@ -15,7 +15,7 @@
  */
 
 Route::post('/login', 'OllieFordandCo\Amaranth\Http\Controllers\AuthController@postLogin');
-Route::get('/login', 'OllieFordandCo\Amaranth\Http\Controllers\AuthController@login');
+Route::get('/login', 'OllieFordandCo\Amaranth\Http\Controllers\AuthController@login')->name('login');
 
 Route::get('/dashboard', 'OllieFordandCo\Amaranth\Http\Controllers\DashboardController@index');
 

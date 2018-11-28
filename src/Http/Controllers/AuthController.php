@@ -3,6 +3,7 @@
 namespace OllieFordandCo\Amaranth\Http\Controllers;
 
 use OllieFordandCo\Amaranth\Http\Controller;
+use Illuminate\Support\MessageBag;
 
 class AuthController extends Controller
 {
@@ -23,7 +24,8 @@ class AuthController extends Controller
      */
     public function postLogin()
     {
-        return view('amaranth::auth.login');
+        $errors = new MessageBag;
+        return view('amaranth::auth.login')->with('errors', $errors);
     }
 
     /**
@@ -33,6 +35,7 @@ class AuthController extends Controller
      */
     public function login()
     {
-        return view('amaranth::auth.login');
+        $errors = new MessageBag;
+        return view('amaranth::auth.login')->with('errors', $errors);
     }
 }
