@@ -10,7 +10,3 @@ class Amaranth implements Contracts\Factory
 
 
 }
-
-
-$amaranth = new Amaranth;
-$amaranth->with('facebook')->getDriver();

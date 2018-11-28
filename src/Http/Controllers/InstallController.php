@@ -5,6 +5,7 @@ namespace OllieFordandCo\Amaranth\Http\Controllers;
 use OllieFordandCo\Amaranth\Http\Controller;
 use Jackiedo\DotenvEditor\Facades\DotenvEditor;
 use Illuminate\Http\Request;
+use App\User;
 
 class InstallController extends Controller
 {
@@ -35,6 +36,24 @@ class InstallController extends Controller
     public function store()
     {
         return redirect('install?page=getting-started');
+    }
+
+    public function admin(Request $request) {
+
+
+        User::create(array(
+            'email'         => $request->input('email'),
+            'password'      => \Hash::make($request->input('password'))
+        ));
+
+        return redirect('install?page=database');
+    }
+
+    public function migrate() {
+        $exitCode = \Artisan::call('migrate:refresh', [
+            '--force' => true,
+        ]);
+        return redirect('install?page=database');
     }
 
     /**

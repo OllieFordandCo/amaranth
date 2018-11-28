@@ -99,16 +99,16 @@
         .scroll-content {
             width: 100% !important;
         }
-        .list-unstyled li {
+        .list-unstyled.menu li {
             transition: all 300ms ease-out;
             border-bottom: 3px solid transparent;
         }
-        .list-unstyled li.active {
+        .list-unstyled.menu li.active {
             box-shadow: 0 0 35px rgba(0,0,0,0.2);
             border-bottom: 3px solid #c30e40;
             background-color: rgba(255,255,255,0.03);
         }
-        .list-unstyled li:hover  {
+        .list-unstyled.menu li:hover  {
             background-color: rgba(0,0,0,0.2);
             border-color: rgba(0,0,0,0.2);
         }
@@ -131,9 +131,10 @@
                                 <?php $page = isset($_GET['page']) ? $_GET['page'] : ''; ?>
                                 @if(Cookie::get('install_access') == substr(env('APP_KEY'), -7))
                                     <div class="col-12 card-sidebar" style="overflow: hidden;">
-                                        <ul class="list-unstyled text-center mb-0 list-inline-block">
+                                        <ul class="list-unstyled menu text-center mb-0 list-inline-block">
                                             <li<?php if($page == 'getting-started') echo ' class="active"'; ?>><a class="link-reset d-block px-3 py-2" href="install?page=getting-started"><i class="orb mr-1 v-align-middle"></i> <span class="v-align-middle">Getting Started</span></a></li>
                                             <li<?php if($page == 'environment') echo ' class="active"'; ?>><a class="link-reset d-block px-3 py-2" href="install?page=environment"><i class="orb mr-1 v-align-middle"></i> <span class="v-align-middle">Environmental Editor</span></a></li>
+                                            <li<?php if($page == 'database') echo ' class="active"'; ?>><a class="link-reset d-block px-3 py-2" href="install?page=database"><i class="orb mr-1 v-align-middle"></i> <span class="v-align-middle">Database Connection</span></a></li>
                                             <li<?php if($page == 'status') echo ' class="active"'; ?>><a class="link-reset d-block px-3 py-2" href="install?page=status"><i class="orb mr-1 v-align-middle"></i> <span class="v-align-middle">System Status</span></a></li>
                                         </ul>
                                     </div>
@@ -205,12 +206,75 @@
                                             </div>
                                         </div>
                                     <?php break;
+                                    case 'database': ?>
+                                    <div class="col-12" style="max-height:calc(100vh - 450px);">
+                                        <div class="scroll-content" data-simplebar>
+                                            <h2 class="h4 text-white px-3 my-3">Database Connection</h2>
+                                            <?php try {
+                                                \DB::connection()->getPdo();
+                                                if(DB::connection()->getDatabaseName()){
+                                                    echo "<p class='px-3'>Successfully connected to the database " . DB::connection()->getDatabaseName() . "</p>";
+                                                    if(Schema::hasTable('users')) {
+                                                        $user = \App\User::first();
+                                                        if(is_null($user)) { ?>
+                                                            <div class="col-12 mb-3 text-center">
+                                                                <form method="POST" action="install/admin" class="card-block px-3 grid-row text-white text-center">
+                                                                    <div class="col-12">
+                                                                        <label for="username">Email:</label>
+                                                                        <input class="bg-white" id="email" name="email" type="text" value="">
+                                                                    </div>
+                                                                    <div class="col-12">
+                                                                        <label for="username">Password:</label>
+                                                                        <input class="bg-white" id="password" name="password" type="password" value="">
+                                                                    </div>
+                                                                    <div class="col-12 text-center">
+                                                                        <button type="submit" class="btn btn-primary my-3 mx-auto">Create User</button>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                        <?php } else { ?>
+                                                            <p class="px-3">Current Admin: <?php echo $user->email; ?></p>
+                                                            <div class="col-12 mb-3 text-center">
+                                                                <a href="<?php echo config('app.url'); ?>" class="btn btn-primary mt-3 mx-auto">Login</a>
+                                                            </div>
+                                                        <?php } ?>
+                                                    <?php } else { ?>
+                                                        <p class="px-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. <b>Hoc loco tenere se Triarius non potuit.</b> Sed id ne cogitari quidem potest quale sit, ut non repugnet ipsum sibi. Duo enim genera quae erant, fecit tria. <i>At eum nihili facit;</i> Vide, ne etiam menses! nisi forte eum dicis, qui, simul atque arripuit, interficit. Sed quanta sit alias, nunc tantum possitne esse tanta. Fortitudinis quaedam praecepta sunt ac paene leges, quae effeminari virum vetant in dolore. Duo Reges: constructio interrete. </p>
+                                                        <div class="col-12 mb-3 text-center">
+                                                            <a href="install/migrate" class="btn btn-primary mt-3 mx-auto">Run migrations</a>
+                                                        </div>
+                                                    <?php }
+                                                } else {
+                                                    echo "<p class='px-3'>Could not find the database. Please check your configuration.</p>"; ?>
+                                                    <div class="col-12 mb-3 text-center">
+                                                        <a href="install?page=environment" class="btn btn-primary mt-3 mx-auto">Edit Database Configuration</a>
+                                                    </div>
+                                                <?php }
+                                                ?>
+                                            <?php
+                                            } catch (\Exception $e) { ?>
+                                                <p class="px-3">We couldn't find database details. Please use the Environmental Editor to add the db connection settings.</p>
+                                                <div class="col-12 mb-3 text-center">
+                                                    <a href="install?page=environment" class="btn btn-primary mt-3 mx-auto">Add Database Configuration</a>
+                                                </div>
+                                            <?php } ?>
+                                        </div>
+                                    </div>
+                                    <?php break;
                                     default: ?>
                                         <div class="col-12" style="height:300px;">
                                             <div class="scroll-content" data-simplebar>
-                                                <h2 class="h4 text-white px-3 my-3">Get Started!</h2>
-                                                <div class="card-block px-3 text-white">
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <b>Hoc loco tenere se Triarius non potuit.</b> Sed id ne cogitari quidem potest quale sit, ut non repugnet ipsum sibi. Duo enim genera quae erant, fecit tria. <i>At eum nihili facit;</i> Vide, ne etiam menses! nisi forte eum dicis, qui, simul atque arripuit, interficit. Sed quanta sit alias, nunc tantum possitne esse tanta. Fortitudinis quaedam praecepta sunt ac paene leges, quae effeminari virum vetant in dolore. Duo Reges: constructio interrete. </p>
+                                                <div class="text-center">
+                                                    <h2 class="h4 text-white px-3 my-3">Get Started!</h2>
+                                                    <div class="card-block px-3 text-white">
+                                                        <p>Welcome to Amaranth! We need to configure some things before we can get the system up and running.</p>
+                                                        <ul class="list-unstyled text-center">
+                                                            <li><i class="fas fa-times mr-2 my-1"></i> Environmental Settings</li>
+                                                            <li><i class="fas fa-times mr-2 my-1"></i> Database Connection</li>
+                                                            <li><i class="fas fa-times mr-2 my-1"></i> Styling</li>
+                                                            <li><i class="fas fa-times mr-2 my-1"></i> Users</li>
+                                                        </ul>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
