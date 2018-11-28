@@ -4,6 +4,7 @@ namespace OllieFordandCo\Amaranth;
 
 use Illuminate\Support\ServiceProvider;
 use OllieFordandCo\Amaranth\Commands\InstallCommand;
+use Illuminate\Foundation\AliasLoader;
 
 class AmaranthServiceProvider extends ServiceProvider
 {
@@ -72,6 +73,7 @@ class AmaranthServiceProvider extends ServiceProvider
 
         $this->app['router']->aliasMiddleware('install', 'OllieFordandCo\Amaranth\Http\Middleware\InstallationAccess');
 
+
         $this->mergeConfigFrom(
             __DIR__ . '/../config/amaranth.php', 'amaranth'
         );
@@ -80,9 +82,6 @@ class AmaranthServiceProvider extends ServiceProvider
             __DIR__ . '/../config/dotenv-editor.php', 'dontenv-editor'
         );
 
-        $this->app->singleton('OllieFordandCo\Amaranth\Contracts\Factory', function ($app) {
-            return new Engine($app);
-        });
     }
 
 

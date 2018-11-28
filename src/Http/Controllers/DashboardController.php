@@ -4,7 +4,7 @@ namespace OllieFordandCo\Amaranth\Http\Controllers;
 
 use OllieFordandCo\Amaranth\Http\Controller;
 
-class AuthController extends Controller
+class DashboardController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -16,23 +16,14 @@ class AuthController extends Controller
 
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function postLogin()
-    {
-        return view('amaranth::auth.login');
-    }
 
     /**
      * Show the application dashboard.
      *
      * @return \Illuminate\Http\Response
      */
-    public function login()
+    public function index()
     {
-        return view('amaranth::auth.login');
+        return view('amaranth::dashboard.index');
     }
 }
