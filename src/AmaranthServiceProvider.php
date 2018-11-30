@@ -4,7 +4,6 @@ namespace OllieFordandCo\Amaranth;
 
 use Illuminate\Support\ServiceProvider;
 use OllieFordandCo\Amaranth\Commands\InstallCommand;
-use Illuminate\Foundation\AliasLoader;
 
 class AmaranthServiceProvider extends ServiceProvider
 {
