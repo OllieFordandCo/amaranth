@@ -180,7 +180,7 @@
                                                 <form method="POST" class="card-block grid-row grid-gutter py-3 px-2 text-white">
                                                     @method('PUT')
                                                     <?php
-                                                    $env = DotenvEditor::getLines();
+                                                    $env = \DotenvEditor::getLines();
                                                     foreach($env as $rule) {
                                                     $data = $rule['parsed_data'];
                                                     if($data['type'] !== 'empty') : ?>
@@ -212,6 +212,7 @@
                                             <h2 class="h4 text-white px-3 my-3">Database Connection</h2>
                                             <?php try {
                                                 \DB::connection()->getPdo();
+
                                                 if(DB::connection()->getDatabaseName()){
                                                     echo "<p class='px-3'>Successfully connected to the database " . DB::connection()->getDatabaseName() . "</p>";
                                                     if(Schema::hasTable('users')) {
@@ -253,7 +254,7 @@
                                                 ?>
                                             <?php
                                             } catch (\Exception $e) { ?>
-                                                <p class="px-3">We couldn't find database details. Please use the Environmental Editor to add the db connection settings.</p>
+                                                <p class="mx-3 px-2 p-1 bg-primary"><?php echo $e->getMessage(); ?></p>
                                                 <div class="col-12 mb-3 text-center">
                                                     <a href="install?page=environment" class="btn btn-primary mt-3 mx-auto">Add Database Configuration</a>
                                                 </div>

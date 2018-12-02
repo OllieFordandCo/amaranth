@@ -4,6 +4,7 @@ namespace OllieFordandCo\Amaranth;
 
 use Illuminate\Support\ServiceProvider;
 use OllieFordandCo\Amaranth\Commands\InstallCommand;
+use Illuminate\Support\Facades\Schema;
 
 class AmaranthServiceProvider extends ServiceProvider
 {
@@ -22,12 +23,16 @@ class AmaranthServiceProvider extends ServiceProvider
     public function boot()
     {
 
+
+
         /**
          * Register the commands for the package
          */
         $this->commands([
             InstallCommand::class
         ]);
+
+        Schema::defaultStringLength(191);
 
         /**
          * Register the resources from the package
@@ -40,13 +45,13 @@ class AmaranthServiceProvider extends ServiceProvider
         // Views
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'amaranth');
 
+        // Migrations
+        $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
+
         /**
          * Let the system publish the configuration to the main instance for modification
          */
         if ($this->app->runningInConsole()) {
-
-            // Migrations
-            $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
 
             // Config
             $this->publishes([
@@ -72,6 +77,16 @@ class AmaranthServiceProvider extends ServiceProvider
 
         $this->app['router']->aliasMiddleware('install', 'OllieFordandCo\Amaranth\Http\Middleware\InstallationAccess');
 
+        /*
+         * Register the service provider for the dependencies.
+         */
+        $this->app->register('Jackiedo\DotenvEditor\DotenvEditorServiceProvider');
+
+        /*
+         * Create aliases for the dependencies.
+         */
+        $loader = \Illuminate\Foundation\AliasLoader::getInstance();
+        $loader->alias('DotenvEditor', 'Jackiedo\DotenvEditor\Facades\DotenvEditor');
 
         $this->mergeConfigFrom(
             __DIR__ . '/../config/amaranth.php', 'amaranth'

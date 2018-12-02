@@ -39,8 +39,6 @@ class InstallController extends Controller
     }
 
     public function admin(Request $request) {
-
-
         User::create(array(
             'email'         => $request->input('email'),
             'password'      => \Hash::make($request->input('password'))

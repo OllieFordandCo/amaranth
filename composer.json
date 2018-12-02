@@ -28,8 +28,12 @@
     },
     "laravel": {
       "providers": [
-        "OllieFordandCo\\Amaranth\\AmaranthServiceProvider"
-      ]
+        "OllieFordandCo\\Amaranth\\AmaranthServiceProvider",
+        "Jackiedo\\DotenvEditor\\DotenvEditorServiceProvider"
+      ],
+      "aliases": {
+        "DotenvEditor": "Jackiedo\\DotenvEditor\\Facades\\DotenvEditor"
+      }
     }
   },
   "autoload": {

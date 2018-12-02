@@ -62,7 +62,7 @@
         "type": "path",
         "url": "../php/amaranth"
     }
-],
+    ],
     "minimum-stability": "dev",
     "prefer-stable": true
 }

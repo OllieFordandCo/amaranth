@@ -124,7 +124,15 @@
                                             <p>Unum est sine dolore esse, alterum cum voluptate. <a href="http://loripsum.net/" target="_blank">Scrupulum, inquam, abeunti;</a> <mark>Itaque fecimus.</mark> Nec enim, dum metuit, iustus est, et certe, si metuere destiterit, non erit; </p>
 
                                             <p>Quod quidem iam fit etiam in Academia. <mark>Sed fortuna fortis;</mark> <mark>Egone quaeris, inquit, quid sentiam?</mark> <i>Aliter enim explicari, quod quaeritur, non potest.</i> Mihi vero, inquit, placet agi subtilius et, ut ipse dixisti, pressius. <b>Quid censes in Latino fore?</b> Et harum quidem rerum facilis est et expedita distinctio. </p>
-                                            <?php if(!\Schema::hasTable('users')) { ?>
+                                            <?php
+                                            $installed = false;
+                                            try {
+                                                $hasUsers = \Schema::hasTable('users');
+                                                $installed = true;
+                                            } catch(\Exception $e) {
+                                                $installed = false;
+                                            }
+                                            if(!$installed) { ?>
                                                 <a href="./install" class="btn btn-primary my-3">Start installation</a>
                                             <?php } else { ?>
                                                 <a href="./login" class="btn btn-primary my-3">Login</a>
