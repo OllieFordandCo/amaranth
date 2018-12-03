@@ -19,6 +19,8 @@ class InstallCommand extends Command {
 
         \Artisan::call("make:auth", ['--force' => true]);
         echo "Auth published\n";
+        \Artisan::call("vendor:publish", ['--provider' => "OllieFordandCo\\Amaranth\\AmaranthServiceProvider", '--force' => true]);
+        echo "Amaranth published\n";
         $this->removeLines();
         echo "Routes updated\n";
         $this->emptyDir(base_path('database/migrations'));
