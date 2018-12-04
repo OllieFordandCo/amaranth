@@ -20,8 +20,4 @@ Route::get('/install/migrate', 'OllieFordandCo\Amaranth\Http\Controllers\Install
 Route::post('/install/admin', 'OllieFordandCo\Amaranth\Http\Controllers\InstallController@admin');
 Route::get('/install', 'OllieFordandCo\Amaranth\Http\Controllers\InstallController@index');
 
-
-Route::post('/login', 'OllieFordandCo\Amaranth\Http\Controllers\AuthController@postLogin');
-Route::get('/login', 'OllieFordandCo\Amaranth\Http\Controllers\AuthController@login')->name('login');
-
-Route::get('/dashboard', 'OllieFordandCo\Amaranth\Http\Controllers\DashboardController@index');
+Route::get('/', 'OllieFordandCo\Amaranth\Http\Controllers\HomeController@index');

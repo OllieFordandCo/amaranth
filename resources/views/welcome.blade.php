@@ -115,15 +115,11 @@
                                 <h5 class="my-1 text-grey-light text-thin">Getting Started</h5>
                             </header>
                             <article class="grid-row text-left">
-                                <div class="col-12" style="height:450px;">
+                                <div class="col-12">
                                     <div class="scroll-content text-center py-3 px-xl" data-simplebar>
                                         <h2 class="h5 text-white mb-2">Let's get this show on the road!</h2>
                                         <div class="card-block text-white">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <b>Hoc loco tenere se Triarius non potuit.</b> Sed id ne cogitari quidem potest quale sit, ut non repugnet ipsum sibi. Duo enim genera quae erant, fecit tria. <i>At eum nihili facit;</i> Vide, ne etiam menses! nisi forte eum dicis, qui, simul atque arripuit, interficit. Sed quanta sit alias, nunc tantum possitne esse tanta. Fortitudinis quaedam praecepta sunt ac paene leges, quae effeminari virum vetant in dolore. Duo Reges: constructio interrete. </p>
-
-                                            <p>Unum est sine dolore esse, alterum cum voluptate. <a href="http://loripsum.net/" target="_blank">Scrupulum, inquam, abeunti;</a> <mark>Itaque fecimus.</mark> Nec enim, dum metuit, iustus est, et certe, si metuere destiterit, non erit; </p>
-
-                                            <p>Quod quidem iam fit etiam in Academia. <mark>Sed fortuna fortis;</mark> <mark>Egone quaeris, inquit, quid sentiam?</mark> <i>Aliter enim explicari, quod quaeritur, non potest.</i> Mihi vero, inquit, placet agi subtilius et, ut ipse dixisti, pressius. <b>Quid censes in Latino fore?</b> Et harum quidem rerum facilis est et expedita distinctio. </p>
+                                            <p>Application in development. Check back soon or log in below.</p>
                                             <?php
                                             $installed = false;
                                             try {
