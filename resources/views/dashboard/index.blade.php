@@ -34,6 +34,7 @@
             height: 100%;
             margin: 0;
             overflow-x: hidden;
+            position: relative;
         }
         .bg-half {
             position: absolute;

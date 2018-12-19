@@ -1151,6 +1151,17 @@ th {
 .text-center {
   text-align: center; }
 
+.alignfull,
+.alignwide {
+  margin-left: calc( -100vw / 2 + 100% / 2);
+  margin-right: calc( -100vw / 2 + 100% / 2);
+  max-width: 100vw; }
+
+@media only screen and (min-width: 950px) {
+  .alignwide {
+    margin-left: -125px;
+    margin-right: -125px; } }
+
 /* Display */
 .d-none {
   display: none !important; }
@@ -2835,6 +2846,7 @@ th {
       min-height: 105.6px ""; } }
 
 .full-height {
+  height: 100%;
   height: 100vh; }
   @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
     .full-height {
@@ -2856,6 +2868,7 @@ th {
       height: 320px !important; } }
 
 .two-thirds-height {
+  height: 66%;
   height: 66vh; }
   @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
     .two-thirds-height {
@@ -2877,6 +2890,7 @@ th {
       height: 211.2px !important; } }
 
 .half-height {
+  height: 50%;
   height: 50vh; }
   @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
     .half-height {
@@ -2898,6 +2912,7 @@ th {
       height: 160px !important; } }
 
 .third-height {
+  height: 33%;
   height: 33vh; }
   @media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
     .third-height {
@@ -2994,6 +3009,9 @@ select {
 */
 code span {
   transition: color 200ms ease-out 300ms; }
+
+a, a:hover, a:active {
+  text-decoration: none; }
 
 figcaption {
   margin-top: .5rem;
