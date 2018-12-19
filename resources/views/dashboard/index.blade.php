@@ -7,15 +7,22 @@
             <div class="container-xs mx-auto">
                 <div class="grid-row text-center">
                     <div class="col-12">
-                        <h1 class="text-white display-3 my-1">{{ config('app.name') }}</h1>
+                        @include('uiManager::components.branding.logo')
                         <main class="card card-dark card-contained my-3">
                             <header class="px-3 py-1">
-                                <h5 class="my-1 text-grey-light text-thin">Getting Started</h5>
+                                <h5 class="my-1 text-grey-light text-thin">Dashboard</h5>
                             </header>
                             <article class="grid-row text-left">
                                 <div class="col-12" style="max-height:calc(100vh - 300px);">
                                     <div class="scroll-content text-center py-3 px-3" data-simplebar>
                                         <h2 class="h5 text-white mb-2">Welcome back, User!</h2>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                                            {{ csrf_field() }}
+                                            <fieldset class="py-2">
+                                                <legend class="small text-center">You are logged in!</legend>
+                                                <button type="submit" class="d-block mx-auto btn btn-border-grey">Logout</button>
+                                            </fieldset>
+                                        </form>
                                     </div>
                                 </div>
                             </article>

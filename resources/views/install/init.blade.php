@@ -7,7 +7,7 @@
             <div class="container mx-auto">
                 <div class="grid-row text-center">
                     <div class="col-12">
-                        <h1 class="text-white display-3 my-1"><?php echo (env('APP_NAME') == 'Laravel') ? 'Amaranth' : env('APP_NAME'); ?></h1>
+                        @include('uiManager::components.branding.logo')
                         <main class="card card-dark card-contained my-3">
                             <header class="px-3 py-1">
                                 <h5 class="my-1 text-grey-light text-thin">Installation</h5>
