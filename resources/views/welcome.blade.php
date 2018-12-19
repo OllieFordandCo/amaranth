@@ -10,13 +10,13 @@
                         @include('uiManager::components.branding.logo')
                         <main class="card card-contained my-3">
                             <header class="px-3 py-1">
-                                <h5 class="my-1 text-grey-light text-thin">Getting Started</h5>
+                                <h5 class="my-1 text-thin">Getting Started</h5>
                             </header>
                             <article class="grid-row text-left">
                                 <div class="col-12">
                                     <div class="scroll-content text-center py-3 px-xl" data-simplebar>
-                                        <h2 class="h5 text-white mb-2">Let's get this show on the road!</h2>
-                                        <div class="card-block text-white">
+                                        <h2 class="h5 mb-2">Let's get this show on the road!</h2>
+                                        <div class="card-block">
                                             <p>Application in development. Check back soon or log in below.</p>
                                             <?php
                                             $installed = false;
@@ -38,7 +38,7 @@
                         </main>
                     </div>
                     <div class="col-12">
-                        <footer><small class="text-white text-center p-2 d-block">Copyright &copy. Ollie Ford & Co. All rights reserved.</small></footer>
+                        <footer><small class="text-center p-2 d-block">Copyright &copy. Ollie Ford & Co. All rights reserved.</small></footer>
                     </div>
                 </div>
             </div>
