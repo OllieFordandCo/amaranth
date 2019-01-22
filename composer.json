@@ -16,7 +16,13 @@
     "illuminate/contracts": "~5.0",
     "illuminate/http": "~5.0",
     "illuminate/support": "~5.0",
-    "jackiedo/dotenv-editor": "1.*"
+    "jackiedo/dotenv-editor": "1.*",
+    "olliefordandco/gatekeeper": "*",
+    "olliefordandco/ui-manager": "*",
+    "spatie/laravel-medialibrary": "^7.0.0",
+    "php-ffmpeg/php-ffmpeg": "dev-master",
+    "intervention/imagecache": "dev-master",
+    "league/flysystem-aws-s3-v3": "dev-master"
   },
   "require-dev": {
     "mockery/mockery": "~0.9",
@@ -29,10 +35,16 @@
     "laravel": {
       "providers": [
         "OllieFordandCo\\Amaranth\\AmaranthServiceProvider",
-        "Jackiedo\\DotenvEditor\\DotenvEditorServiceProvider"
+        "Jackiedo\\DotenvEditor\\DotenvEditorServiceProvider",
+        "OllieFordandCo\\UI\\UIServiceProvider",
+        "OllieFordandCo\\GateKeeper\\Providers\\GateKeeperServiceProvider",
+        "Spatie\\MediaLibrary\\MediaLibraryServiceProvider"
       ],
       "aliases": {
-        "DotenvEditor": "Jackiedo\\DotenvEditor\\Facades\\DotenvEditor"
+        "DotenvEditor": "Jackiedo\\DotenvEditor\\Facades\\DotenvEditor",
+        "GateKeeper": "OllieFordandCo\\GateKeeper\\Providers\\GateKeeperServiceProvider",
+        "UI": "OllieFordandCo\\UI\\UIServiceProvider",
+        "Me": "OllieFordandCo\\UI\\UIServiceProvider"
       }
     }
   },
@@ -45,5 +57,15 @@
     "psr-4": {
       "Tests\\": "tests/"
     }
-  }
+  },
+  "repositories": [
+    {
+      "type": "path",
+      "url": "../gatekeeper"
+    },
+    {
+      "type": "path",
+      "url": "../ui-manager"
+    }
+  ]
 }

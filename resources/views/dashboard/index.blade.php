@@ -16,13 +16,7 @@
                                 <div class="col-12" style="max-height:calc(100vh - 300px);">
                                     <div class="scroll-content text-center py-3 px-3" data-simplebar>
                                         <h2 class="h5 text-white mb-2">Welcome back, User!</h2>
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST">
-                                            {{ csrf_field() }}
-                                            <fieldset class="py-2">
-                                                <legend class="small text-center">You are logged in!</legend>
-                                                <button type="submit" class="d-block mx-auto btn btn-border-grey">Logout</button>
-                                            </fieldset>
-                                        </form>
+                                        @include('gatekeeper::auth.partials.logoutForm')
                                     </div>
                                 </div>
                             </article>
