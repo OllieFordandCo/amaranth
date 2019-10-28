@@ -13,12 +13,10 @@ class CreateAccountsTable extends Migration
      */
     public function up()
     {
-        Schema::defaultStringLength(191);
         Schema::create('accounts', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
             $table->string('username')->unique();
-            $table->integer('user_id');
+            $table->interger('user_id');
             $table->timestamps();
         });
     }

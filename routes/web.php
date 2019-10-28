@@ -10,15 +10,6 @@
 |
 */
 
-/*
- * Install Routes
- */
+Auth::routes();
 
-Route::put('/install', 'OllieFordandCo\Amaranth\Http\Controllers\InstallController@update');
-Route::post('/install', 'OllieFordandCo\Amaranth\Http\Controllers\InstallController@store');
-Route::get('/install/migrate', 'OllieFordandCo\Amaranth\Http\Controllers\InstallController@migrate');
-Route::post('/install/admin', 'OllieFordandCo\Amaranth\Http\Controllers\InstallController@admin');
-Route::get('/install', 'OllieFordandCo\Amaranth\Http\Controllers\InstallController@index');
-
-Route::get('/dashboard', 'OllieFordandCo\Amaranth\Http\Controllers\DashboardController@index');
-Route::get('/', 'OllieFordandCo\Amaranth\Http\Controllers\HomeController@index');
+Route::get('/', 'OllieFordandCo\Amaranth\Http\HomeController@index');
