@@ -15,7 +15,7 @@
   "author": "Ruben Madila",
   "license": "UNLICENSED",
   "devDependencies": {
-    "async": "^2.5.0",
+    "async": "^2.6.4",
     "autoprefixer": "^7.1.2",
     "cssnano": "^v4.0.0-rc.1",
     "gulp": "^3.9.1",
